@@ -7,9 +7,8 @@
   },
   "version": 1,
   "newProjectRoot": "apps",
-  "defaultProject": "angular-google-charts",
   "projects": {
-    "angular-google-charts": {
+    "@milacerda/angular-google-charts": {
       "root": "libs/angular-google-charts",
       "sourceRoot": "libs/angular-google-charts/src",
       "projectType": "library",
