@@ -2,7 +2,7 @@
 
 ![CircleCI](https://img.shields.io/circleci/build/gh/FERNman/angular-google-charts) ![David](https://img.shields.io/david/FERNman/angular-google-charts) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) ![npm](https://img.shields.io/npm/dm/angular-google-charts)
 
-> A wrapper for the [Google Charts library](https://developers.google.com/chart/) written in Angular.
+> A wrapper for the [Google Charts library](https://developers.google.com/chart/) compatible with Angular 13.
 
 ## Setup
 
@@ -11,7 +11,7 @@
 To use Angular-Google-Charts in your project, install the package with npm by calling
 
 ```bash
-npm install angular-google-charts
+npm install @milacerda/angular-google-charts
 ```
 
 This will add the package to your package.json and install the required dependencies.
@@ -21,7 +21,7 @@ This will add the package to your package.json and install the required dependen
 Import the `GoogleChartsModule` in your `app.module.ts`:
 
 ```typescript
-import { GoogleChartsModule } from 'angular-google-charts';
+import { GoogleChartsModule } from '@milacerda/angular-google-charts';
 
 @NgModule({
   ...
@@ -46,12 +46,14 @@ can be passed to the library by importing the `GoogleChartsModule` using its `fo
 or by providing the `GOOGLE_CHARTS_LAZY_CONFIG` injection token with an `Observable<GoogleChartsConfig>` value.
 
 ##### Using forRoot
+
 Here you will pass the options that are passed to the `google.charts.load` method in the normal JavaScript library.
 For instance, to change the [version](https://developers.google.com/chart/interactive/docs/basic_load_libs#load-version-name-or-number)
 
 ```typescript
 GoogleChartsModule.forRoot({ version: 'chart-version' }),
 ```
+
 Another example, to specify the Google Maps API key, or any other [Settings](https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings):
 
 ```typescript
@@ -194,16 +196,13 @@ chartColumns = ['City', 'Inhabitants'];
 For more complex formats an array of objects can be passed. For instance, the GeoChart in markers mode expects 4 columns of type number:
 
 ```typescript
-    chartColumns = [
-        { type: 'number', role: 'latitude' },
-        { type: 'number', role: 'longitude' },
-        { type: 'number', role: 'markerColor' },
-        { type: 'number', role: 'markerSize' }
-    ];
+chartColumns = [
+  { type: 'number', role: 'latitude' },
+  { type: 'number', role: 'longitude' },
+  { type: 'number', role: 'markerColor' },
+  { type: 'number', role: 'markerSize' }
+];
 ```
-
-
-
 
 ### Title
 
